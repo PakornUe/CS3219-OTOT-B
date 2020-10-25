@@ -1,9 +1,13 @@
 language: node_js
+node_js: "stable"
 services:
     -postgresql
 before_script:
     - psql -c 'create database travis_ci_test;' -U postgres
-env:
-    - DB_HOSTNAME="localhost"
-    - DB_PASSWORD=""
-    - DB_USERNAME="postgres"
+env: DB_HOSTNAME="localhost" DB_PASSWORD="" DB_USERNAME="postgres"
+install:
+    - bundle install
+    - nvm install node
+    - node -v
+    - npm i -g yarn
+    - yarn
