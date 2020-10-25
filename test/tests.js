@@ -10,6 +10,9 @@ chai.should();
 
 
 describe("Tests", () => {
+    before((done) => {
+        app.on("appStarted",done)
+    })
 
     it("conn test", (done) => {
         chai.request(app).get('/').end((err, res) => {
