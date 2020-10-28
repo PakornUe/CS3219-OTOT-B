@@ -8,7 +8,12 @@ cache:
     yarn: true
     directories:
     - "$HOME/google-cloud-sdk/"
-env: DB_HOSTNAME="localhost" DB_PASSWORD="" DB_USERNAME="postgres"
+env: 
+    global:
+        - DB_HOSTNAME="localhost"
+        - DB_PASSWORD=""
+        - DB_USERNAME="postgres"
+        - CLOUDSDK_CORE_DISABLE_PROMPTS=1
 install:
     - nvm install node
     - node -v
@@ -17,8 +22,8 @@ install:
 
 before_deploy:
     # Install Google Cloud SDK
-    - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export CLOUDSDK_CORE_DISABLE_PROMPTS=1; curl https://sdk.cloud.google.com | bash; fi
-    - source /home/travis/google-cloud-sdk/path.bash.inc
+    - curl https://sdk.cloud.google.com | bash > /dev/null
+    - source $HOME/google-cloud-sdk/path.bash.inc
     - gcloud --quiet version
     - gcloud --quiet components update
     
