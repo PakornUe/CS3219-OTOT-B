@@ -103,3 +103,5 @@ dist
 # TernJS port file
 .tern-port
 .server-env.yaml
+secrets.tar
+secrets/google-api-key.json
