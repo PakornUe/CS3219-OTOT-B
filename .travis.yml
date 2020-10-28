@@ -4,13 +4,16 @@ services:
     - postgresql
 before_script:
     - psql -c 'create database travis_ci_test;' -U postgres
+cache:
+    yarn: true
+    directories:
+    - "$HOME/google-cloud-sdk/"
 env: DB_HOSTNAME="localhost" DB_PASSWORD="" DB_USERNAME="postgres"
 install:
     - nvm install node
     - node -v
     - npm i -g yarn
     - yarn
-
 
 before_deploy:
     # Install Google Cloud SDK
