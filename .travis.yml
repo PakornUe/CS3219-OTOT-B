@@ -30,3 +30,5 @@ deploy:
     provider: script
     # Replace the project name here
     script: yarn deploy --project cs3219-otot-b-293610
+    on:
+        branch: main
