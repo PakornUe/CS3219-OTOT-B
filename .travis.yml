@@ -1,7 +1,7 @@
 language: node_js
 node_js: "stable"
 services:
-    -postgresql
+    - postgresql
 before_script:
     - psql -c 'create database travis_ci_test;' -U postgres
 env: DB_HOSTNAME="localhost" DB_PASSWORD="" DB_USERNAME="postgres"
@@ -30,5 +30,3 @@ deploy:
     provider: script
     # Replace the project name here
     script: yarn deploy --project cs3219-otot-b-293610
-    on:
-      branch: master
