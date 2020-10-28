@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start": "node -r dotenv/config index.js --port=80",
-    "deploy": "gcloud functions deploy api --allow-unauthenticated --trigger-http --runtime nodejs10 --entry-point app --env-vars-file .server-env.yaml",
+    "deploy": "gcloud functions deploy api --allow-unauthenticated --trigger-http --runtime nodejs10 --entry-point app --env-vars-file ./secrets/.server-env.yaml",
     "test": "npx mocha --exit"
   },
   "devDependencies": {
