@@ -33,6 +33,7 @@ before_deploy:
 
 deploy:
     provider: script
+    skip_cleanup: true
     # Replace the project name here
     script: yarn deploy --project cs3219-otot-b-293610
     on:
