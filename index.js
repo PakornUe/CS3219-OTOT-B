@@ -15,7 +15,7 @@ const db = new Sequelize("postgres", process.env.DB_USERNAME, process.env.DB_PAS
         socketPath: process.env.DB_HOSTNAME
     },
     logging: false,
-    operatorsAliases: false
+    operatorsAliases: '0'
 });
 
 db.authenticate().then(() => {
