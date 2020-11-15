@@ -63,7 +63,7 @@ app.get('/', function (req,res) {
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/listEntry', async function (req, res) {
     if (req.query.requestor_uid == undefined) {
-        res.status("400").send("Requester User ID Missing")
+        res.status("400").send("Requestor User ID Missing")
         return;
     }
 
@@ -83,7 +83,7 @@ app.get('/listEntry', async function (req, res) {
 
 app.put('/updateEntry', function (req, res) {
     if (req.query.requestor_uid == undefined) {
-        res.status(400).send("Requester User ID Missing")
+        res.status(400).send("Requestor User ID Missing")
         return;
     }
 
@@ -120,7 +120,7 @@ app.put('/updateEntry', function (req, res) {
 app.post('/createEntry', function (req, res) {
 
     if (req.query.requestor_uid == undefined) {
-        res.status(400).send("Requester User ID Missing")
+        res.status(400).send("Requestor User ID Missing")
         return;
     }
 
@@ -146,7 +146,7 @@ app.post('/createEntry', function (req, res) {
 
 app.delete('/deleteEntry', function (req, res) {
     if (req.query.requestor_uid == undefined) {
-        res.status(400).send("Requester User ID Missing")
+        res.status(400).send("Requestor User ID Missing")
         return;
     }
 
