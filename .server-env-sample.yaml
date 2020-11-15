@@ -1,0 +1,3 @@
+DB_HOSTNAME: 'db_hostname'
+DB_USERNAME: 'username'
+DB_PASSWORD: 'password'
