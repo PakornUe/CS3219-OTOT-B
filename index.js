@@ -2,6 +2,8 @@ const {Sequelize, DataTypes} = require('sequelize')
 
 require('dotenv/config')
 
+var cors = require('cors')
+
 const db = new Sequelize("postgres", process.env.DB_USERNAME, process.env.DB_PASSWORD, {
     dialect: 'postgres',
     host: process.env.DB_HOSTNAME,
@@ -51,6 +53,8 @@ const Notes = db.define('Notes', {
     }
   }, {
 });
+
+app.use(cors())
 
 app.get('/', function (req,res) {
     res.status(200).send("service online")
